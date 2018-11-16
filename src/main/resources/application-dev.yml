@@ -27,7 +27,7 @@ spring:
       server:
         health.enabled: false
         git:
-          uri: git@code.aliyun.com:linkme/config-repo.git
+          uri: git@code.aliyun.com:alauda_cloud/config-repo.git
           searchPaths: '{application}'
           force-pull: true
           clone-on-start: true
@@ -63,7 +63,7 @@ spring:
             -----END RSA PRIVATE KEY-----
 
 eureka:
-  host: eureka-server
+  host: eureka-server-demo
   port: 8080
   username: discovery
   password: 3GfhPZQifTpVcu
