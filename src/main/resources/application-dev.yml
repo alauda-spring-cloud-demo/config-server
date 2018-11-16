@@ -58,7 +58,7 @@ spring:
 
 eureka:
   host: eureka-server-demo
-  port: 8080
+  port: 8761
   username: discovery
   password: 3GfhPZQifTpVcu
   instance:
@@ -66,8 +66,3 @@ eureka:
   client:
     service-url:
       defaultZone: http://${eureka.username}:${eureka.password}@${eureka.host}:${eureka.port}/eureka
----
-spring:
-  profiles: default
-eureka:
-  host: 127.0.0.1
