@@ -13,12 +13,6 @@ server:
     #   buffers-per-region: 1024 # 这个参数不需要写了
     # 是否分配的直接内存
     direct-buffers: true
-security:
-  basic:
-    enabled: true
-  user:
-    name: tXFYj4bp4qnvbvnq
-    password: yoc92ZPhovskbHmB
 spring:
   application:
     name: config-server
@@ -27,7 +21,7 @@ spring:
       server:
         health.enabled: false
         git:
-          uri: git@code.aliyun.com:alauda_cloud/config-repo.git
+          uri: git@code.aliyun.com:linkme/config-repo.git
           searchPaths: '{application}'
           force-pull: true
           clone-on-start: true
