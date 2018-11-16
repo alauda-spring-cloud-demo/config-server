@@ -1,0 +1,79 @@
+server:
+  port: 8080
+  undertow:
+    max-http-post-size: 0
+    # 设置IO线程数, 它主要执行非阻塞的任务,它们会负责多个连接, 默认设置每个CPU核心一个线程,数量和CPU 内核数目一样即可
+    io-threads: 2
+    # 阻塞任务线程池, 当执行类似servlet请求阻塞操作, undertow会从这个线程池中取得线程,它的值设置取决于系统的负载  io-threads*8
+    worker-threads: 16
+    # 以下的配置会影响buffer,这些buffer会用于服务器连接的IO操作,有点类似netty的池化内存管理
+    # 每块buffer的空间大小,越小的空间被利用越充分
+    buffer-size: 1024
+    # 每个区分配的buffer数量 , 所以pool的大小是buffer-size * buffers-per-region
+    #   buffers-per-region: 1024 # 这个参数不需要写了
+    # 是否分配的直接内存
+    direct-buffers: true
+security:
+  basic:
+    enabled: true
+  user:
+    name: tXFYj4bp4qnvbvnq
+    password: yoc92ZPhovskbHmB
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        health.enabled: false
+        git:
+          uri: git@code.aliyun.com:linkme/config-repo.git
+          searchPaths: '{application}'
+          force-pull: true
+          clone-on-start: true
+          ignore-local-ssh-settings: true
+          strict-host-key-checking: false
+          private-key: |
+            -----BEGIN RSA PRIVATE KEY-----
+            MIIEpQIBAAKCAQEAwb/SVA1N34jbh+uY+XbF/jzTynjoyeNkuH3Yy0Wr2yKJRIaX
+            0gimmCFE6FWvS5F1AM6dFibw3Ja2JqGDwnewWwmdkYYkMLNq/QSBgtDpMkwfR2AS
+            SNU+yoGSBq2ctVdPmNN9WHM044ZZs8lWzVAH+PGQ3otjg6hm6zL2/7VUSaMxMj1L
+            5BZzq6urNAFQ5I0ziZRRczNm1WiRoIePnex7II4AiL4M5NKfS+r99u4YYJ4X17Q0
+            ZBbg0Km6937l25qf7L04izazGqNQgbCzDnws76Djv7VNPlV9jGsf09Cr1rvxYI4u
+            JZ6fjww7xD+O//2JUXFR6hBcaKOeLfPD5IASLwIDAQABAoIBAC5TZUD/pV0LZiJL
+            rNoJEjJF7QX+fvq2ykBqpsmDsSHGUjf2TprDwsGhQs6injVdZDJ7NIg1a2XzCz6V
+            Y+G9qIc791byUfjrDWvOBgF3XirOlLQGPpj3k/nrnTTHki6x37BU8SWS9lRorU4V
+            mBGjTySw7cioX3T9cQ5Ps0tU2gB5ACnGayh5t6erZmDQApcdICh8n8s14j0MQOf3
+            KFiE3Fitp1WLiHHhq6kwyMDJY4Acpg1HILW1yuzfwIrAUlCje8YKT8SzDKuxtxGW
+            OK+CrZF3im+j3YGwTPKcu8G1luRQ1uffdFYmABLHG30MdoUcakrET0hS89Tdqf3n
+            U8g/I1ECgYEA4WhOwK/6lYUhNLgb9IPFu3l/uL1TAPmf5currYk/SUW4MSnj1T5P
+            +nQri0dDMEum+bKI9wKIozbwbZIsjJY9wCB9drMrYxp7kEZtcy3622R11wJ8ar67
+            BSZG/hsAXPe9XKoGGVuetrzxEKqupqhj/JpTyiRTJ3ryGLKiIJLqwGsCgYEA3AuQ
+            bX0Fz44qTYHmzuoUXNGxdZa1/wS/uCVdyhp5CHbrHPvvMbad3mZtb/s1FG20hpJ5
+            ++vr36byGV7nSqZoVgURTEyk24GJoSMpNDd+U9xxVTkmPe1kDtCQs3kT3i4q7p60
+            102jJQaovXGXH2eYQKGSy9JhSuNoztd4bVDRFk0CgYEAw0H7LlmDBXDMogF2Xeqk
+            J9GI/TwroeWbSJGUxv/kLZHSi+wQq5GN8JQfgEgcAMMYAqdQlEDCojgeL5x3MNWY
+            6kx6wo9UX0X6kbEgcKz86H3uwnEp28Ia+cv9pXM4blBA3ft+ywqdwwiK/ngMUNv/
+            uTrqqGmtCr8q5pAfd34tEr8CgYEAtsy0kwCFz0NfSTxdLg+wEtvw/KrTTqP3UVdZ
+            bwhG/A0ujMmOkFIRHC0jRR//nJT2n8UXqXz4Wrgp74Gzy4QqsStMj4Isgl4+o6q+
+            FC71t10umYn8hv2rXdNOIoq3QqA/8jPOL/7DRYMesyKmVOSOy0Ju3PxM7xW0gADo
+            fofg6xECgYEA0qAWf5mVfj6q0UqFYLHNpGNOZld9I0JHn93++PKtzNIwYQ5NUljC
+            i88bhl3LcLqlVw5jYYzG0S89r32oy2aqfl27uI3qzGjf12oz4PyyDoZs3MdkJGHS
+            C6fuVoqpHCIQDvPX95fL33LJkB5jUOXQOEgRJypKxFkA7lNf/zCKMQw=
+            -----END RSA PRIVATE KEY-----
+
+eureka:
+  host: eureka-server
+  port: 8080
+  username: discovery
+  password: 3GfhPZQifTpVcu
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://${eureka.username}:${eureka.password}@${eureka.host}:${eureka.port}/eureka
+---
+spring:
+  profiles: default
+eureka:
+  host: 127.0.0.1

@@ -40,18 +40,5 @@
         </plugins>
     </build>
 
-    <repositories>
-        <repository>
-            <id>epai</id>
-            <url>http://dev.epai.io/nexus/content/groups/public</url>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>epai</id>
-            <url>http://dev.epai.io/nexus/content/groups/public</url>
-        </pluginRepository>
-    </pluginRepositories>
-
 
 </project>
