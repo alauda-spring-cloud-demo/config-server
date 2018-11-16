@@ -21,7 +21,7 @@ spring:
       server:
         health.enabled: false
         git:
-          uri: git@code.aliyun.com:linkme/config-repo.git
+          uri: git@code.aliyun.com:alauda_cloud/config-repo.git
           searchPaths: '{application}'
           force-pull: true
           clone-on-start: true
