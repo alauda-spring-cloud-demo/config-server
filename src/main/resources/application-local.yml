@@ -6,40 +6,12 @@ spring:
   cloud:
     config:
       server:
-        health.enabled: false
         git:
-          uri: git@gitee.com:alauda_cloud/config.git
+          uri: http://10.0.0.20:31101/gaodawei/config-repo.git
           ignore-local-ssh-settings: true
           strictHostKeyChecking: false
-          private-key: |
-            -----BEGIN RSA PRIVATE KEY-----
-            MIIEpQIBAAKCAQEAwb/SVA1N34jbh+uY+XbF/jzTynjoyeNkuH3Yy0Wr2yKJRIaX
-            0gimmCFE6FWvS5F1AM6dFibw3Ja2JqGDwnewWwmdkYYkMLNq/QSBgtDpMkwfR2AS
-            SNU+yoGSBq2ctVdPmNN9WHM044ZZs8lWzVAH+PGQ3otjg6hm6zL2/7VUSaMxMj1L
-            5BZzq6urNAFQ5I0ziZRRczNm1WiRoIePnex7II4AiL4M5NKfS+r99u4YYJ4X17Q0
-            ZBbg0Km6937l25qf7L04izazGqNQgbCzDnws76Djv7VNPlV9jGsf09Cr1rvxYI4u
-            JZ6fjww7xD+O//2JUXFR6hBcaKOeLfPD5IASLwIDAQABAoIBAC5TZUD/pV0LZiJL
-            rNoJEjJF7QX+fvq2ykBqpsmDsSHGUjf2TprDwsGhQs6injVdZDJ7NIg1a2XzCz6V
-            Y+G9qIc791byUfjrDWvOBgF3XirOlLQGPpj3k/nrnTTHki6x37BU8SWS9lRorU4V
-            mBGjTySw7cioX3T9cQ5Ps0tU2gB5ACnGayh5t6erZmDQApcdICh8n8s14j0MQOf3
-            KFiE3Fitp1WLiHHhq6kwyMDJY4Acpg1HILW1yuzfwIrAUlCje8YKT8SzDKuxtxGW
-            OK+CrZF3im+j3YGwTPKcu8G1luRQ1uffdFYmABLHG30MdoUcakrET0hS89Tdqf3n
-            U8g/I1ECgYEA4WhOwK/6lYUhNLgb9IPFu3l/uL1TAPmf5currYk/SUW4MSnj1T5P
-            +nQri0dDMEum+bKI9wKIozbwbZIsjJY9wCB9drMrYxp7kEZtcy3622R11wJ8ar67
-            BSZG/hsAXPe9XKoGGVuetrzxEKqupqhj/JpTyiRTJ3ryGLKiIJLqwGsCgYEA3AuQ
-            bX0Fz44qTYHmzuoUXNGxdZa1/wS/uCVdyhp5CHbrHPvvMbad3mZtb/s1FG20hpJ5
-            ++vr36byGV7nSqZoVgURTEyk24GJoSMpNDd+U9xxVTkmPe1kDtCQs3kT3i4q7p60
-            102jJQaovXGXH2eYQKGSy9JhSuNoztd4bVDRFk0CgYEAw0H7LlmDBXDMogF2Xeqk
-            J9GI/TwroeWbSJGUxv/kLZHSi+wQq5GN8JQfgEgcAMMYAqdQlEDCojgeL5x3MNWY
-            6kx6wo9UX0X6kbEgcKz86H3uwnEp28Ia+cv9pXM4blBA3ft+ywqdwwiK/ngMUNv/
-            uTrqqGmtCr8q5pAfd34tEr8CgYEAtsy0kwCFz0NfSTxdLg+wEtvw/KrTTqP3UVdZ
-            bwhG/A0ujMmOkFIRHC0jRR//nJT2n8UXqXz4Wrgp74Gzy4QqsStMj4Isgl4+o6q+
-            FC71t10umYn8hv2rXdNOIoq3QqA/8jPOL/7DRYMesyKmVOSOy0Ju3PxM7xW0gADo
-            fofg6xECgYEA0qAWf5mVfj6q0UqFYLHNpGNOZld9I0JHn93++PKtzNIwYQ5NUljC
-            i88bhl3LcLqlVw5jYYzG0S89r32oy2aqfl27uI3qzGjf12oz4PyyDoZs3MdkJGHS
-            C6fuVoqpHCIQDvPX95fL33LJkB5jUOXQOEgRJypKxFkA7lNf/zCKMQw=
-            -----END RSA PRIVATE KEY-----
-
           force-pull: true
           searchPaths: '{application}'
           clone-on-start: true
+          username: gaodawei
+          password: modicomm
