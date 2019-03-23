@@ -1,0 +1,37 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://10.0.0.20:31101/gaodawei/config-repo.git
+          ignore-local-ssh-settings: true
+          strictHostKeyChecking: false
+          force-pull: true
+          searchPaths: '{application}'
+          clone-on-start: true
+          username: gaodawei
+          password: modicomm
+eureka:
+  port: 8080
+  username: discovery
+  password: 3GfhPZQifTpVcu
+  client:
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://${eureka.username}:${eureka.password}@eureka1:${eureka.port}/eureka,http://${eureka.username}:${eureka.password}@eureka2:${eureka.port}/eureka
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+---
+spring:
+  profiles: default
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://119.28.60.35:31101/gaodawei/config-repo.git
